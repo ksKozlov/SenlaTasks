@@ -14,6 +14,7 @@ public class TextWorker {
                 stringBuilder.append(c);
             }
         }
+
         return stringBuilder.toString();
     }
 
