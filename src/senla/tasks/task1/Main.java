@@ -1,5 +1,7 @@
 package senla.tasks.task1;
 
+import senla.tasks.errors.ErrorSummoner;
+
 import java.util.Scanner;
 
 public class Main {
@@ -27,11 +29,10 @@ public class Main {
                 }
             }
             else {
-                System.out.println("It seems that you entered not an integer or not a number at all." +
-                        "\nOr maybe your number is too big or small.");
+                ErrorSummoner.incorrectVale();
             }
         } catch (Exception e) {
-            System.out.println("Oops... Some error occurred.");
+            ErrorSummoner.someError();
         }
 
     }
