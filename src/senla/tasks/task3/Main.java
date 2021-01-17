@@ -1,5 +1,7 @@
 package senla.tasks.task3;
 
+import senla.tasks.errors.ErrorSummoner;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,6 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Type text: ");
+
         if (scanner.hasNextLine()) {
             String text = scanner.nextLine();
             String[] words = TextWorker.getSortedWords(text);
@@ -22,7 +25,7 @@ public class Main {
             System.out.println("Number of words: " + TextWorker.getNumberOfWords(text));
         }
         else {
-            System.out.println("Oops... Some error occurred.");
+            ErrorSummoner.someError();
         }
 
     }
