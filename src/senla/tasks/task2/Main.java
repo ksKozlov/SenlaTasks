@@ -1,13 +1,13 @@
 package senla.tasks.task2;
 
+import senla.tasks.errors.ErrorSummoner;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         int a = 0;
         int b = 0;
-        String errorMessage = "It seems that you entered not an integer or not a number at all." +
-                "\nOr maybe your number is too big or small.";
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a: ");
@@ -15,8 +15,7 @@ public class Main {
             a = scanner.nextInt();
         }
         else {
-            System.out.println(errorMessage);
-            System.exit(0);
+            ErrorSummoner.incorrectVale();
         }
 
         System.out.print("Enter b: ");
@@ -24,8 +23,7 @@ public class Main {
             b = scanner.nextInt();
         }
         else {
-            System.out.println(errorMessage);
-            System.exit(0);
+            ErrorSummoner.incorrectVale();
         }
 
         System.out.println("gcd = " + NumWorker.getGcd(a, b));
